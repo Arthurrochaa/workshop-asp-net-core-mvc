@@ -3,41 +3,50 @@
 @{
     ViewData["Title"] = "Departments";
 }
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+</head>
 
-<h2>Departments</h2>
+<body>
+    <h2>Departments</h2>
 
-<p>
-    <a asp-action="Create" class="btn btn-primary">Register new department</a>
-</p>
-<hr />
-<table class="table table-striped table-hover table-responsive">
-    <thead>
-        <tr class="success">
-            <th class="text-primary">
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th></th>
-            <th></th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td class="col-md-6">
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td class="col-md-2">
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
-                </td>
-                <td class="col-md-2">
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a>
-                </td>
-                <td class="col-md-2">
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
+    <p>
+        <a asp-action="Create" class="btn btn-primary">Register new department</a>
+    </p>
+    <hr />
+    <table class="table table-striped table-hover table-responsive">
+        <thead>
+            <tr class="success">
+                <th class="text-primary">
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th></th>
+                <th></th>
+                <th></th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        <a class="material-icons" asp-action="Edit" asp-route-id="@item.Id">create</a>
+                    </td>
+                    <td>
+                        <a class="material-icons" asp-action="Details" asp-route-id="@item.Id">description</a>
+                    </td>
+                    <td>
+                        <a class="material-icons" asp-action="Delete" asp-route-id="@item.Id">delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
