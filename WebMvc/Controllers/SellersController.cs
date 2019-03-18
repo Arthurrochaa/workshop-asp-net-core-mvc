@@ -1,24 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using WebMvc.Models;
+using WebMvc.Services;
 
 namespace WebMvc.Controllers
 {
     public class SellersController : Controller
     {
-        private readonly WebMvcContext _context;
+        private readonly SellerService _sellerService;
 
-        public SellersController(WebMvcContext context)
+        public SellersController(SellerService sellerService)
         {
-            _context = context;
+            _sellerService = sellerService;
         }
 
         public IActionResult Index()
         {
-            return View();
+            return View(_sellerService.FindAll());
         }
     }
 }
