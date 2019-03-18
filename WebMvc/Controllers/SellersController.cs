@@ -17,5 +17,19 @@ namespace WebMvc.Controllers
         {
             return View(_sellerService.FindAll());
         }
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Seller seller)
+        {
+            _sellerService.Insert(seller);
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

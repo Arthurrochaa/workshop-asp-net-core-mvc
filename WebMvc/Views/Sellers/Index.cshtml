@@ -6,19 +6,24 @@
 
 <h2>@ViewData["Title"]</h2>
 
+<p>
+    <a asp-action="Create" class="btn btn-primary">Register new seller</a>
+</p>
+<hr />
+
 <table class="table table-striped table-hover">
     <thead>
         <tr class="success">
-            <th>
+            <th class="text-primary">
                 @Html.DisplayNameFor(model => model.Name)
             </th>
-            <th>
+            <th class="text-primary">
                 @Html.DisplayNameFor(model => model.Email)
             </th>
-            <th>
+            <th class="text-primary">
                 @Html.DisplayNameFor(model => model.BirthDate)
             </th>
-            <th>
+            <th class="text-primary">
                 @Html.DisplayNameFor(model => model.BaseSalary)
             </th>
             <th>
