@@ -11,15 +11,14 @@
 </head>
 
 <body>
-    <h2>Departments</h2>
-
-    <p>
-        <a asp-action="Create" class="btn btn-primary">Register new department</a>
-    </p>
+    <div>
+        <h2>Departments</h2>
+        <a asp-action="Create" class="btn btn-primary btn-sm">Register new department</a>
+    </div>
     <hr />
     <table class="table table-striped table-hover table-responsive">
         <thead>
-            <tr class="success">
+            <tr>
                 <th class="text-primary">
                     @Html.DisplayNameFor(model => model.Name)
                 </th>
@@ -42,7 +41,7 @@
                         <a class="material-icons" asp-action="Details" asp-route-id="@item.Id">description</a>
                     </td>
                     <td>
-                        <a class="material-icons" asp-action="Delete" asp-route-id="@item.Id">delete</a>
+                        <a class="material-icons text-danger" asp-action="Delete" asp-route-id="@item.Id">delete</a>
                     </td>
                 </tr>
             }
