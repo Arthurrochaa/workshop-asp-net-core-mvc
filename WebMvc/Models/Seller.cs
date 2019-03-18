@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 
 namespace WebMvc.Models
 {
@@ -13,6 +14,8 @@ namespace WebMvc.Models
         public double BaseSalary { get; set; }
 
         public Department Department { get; set; }
+        //Garante que a prop não seja nula
+        public int DepartmentId { get; set; }
         public ICollection<SalesRecord> sales = new List<SalesRecord>();
 
         public Seller()
