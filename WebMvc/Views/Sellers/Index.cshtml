@@ -10,16 +10,15 @@
 </head>
 
 <body>
-    <h2>@ViewData["Title"]</h2>
-
-    <p>
-        <a asp-action="Create" class="btn btn-primary btn-sm">Register new seller</a>
-    </p>
+    <div>
+        <h2>@ViewData["Title"]</h2>
+        <a asp-action="Create" class="btn btn-primary btn-xs">Register new seller</a>
+    </div>
     <hr />
 
     <table class="table table-striped table-hover">
         <thead>
-            <tr >
+            <tr>
                 <th class="text-primary">
                     @Html.DisplayNameFor(model => model.Name)
                 </th>
