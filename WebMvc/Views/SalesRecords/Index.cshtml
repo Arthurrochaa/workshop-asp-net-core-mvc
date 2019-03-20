@@ -1,0 +1,69 @@
+﻿@{
+    ViewData["Title"] = "Sales records";
+}
+
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+</head>
+
+<body>
+    <h2>@ViewData["Title"]</h2>
+
+    <hr />
+    <div class="row">
+        <div class="col-md-6">
+            <form class="form-horizontal" asp-action="SimpleSearch">
+                <fieldset>
+                    <legend>Simple search</legend>
+                    <div class="form-group">
+                        <label for="minDate" class="col-lg-4">Min date</label>
+                        <div class="col-lg-10">
+                            <input type="date" name="minDate" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="maxDate" class="col-lg-4">Max date</label>
+                        <div class="col-lg-10">
+                            <input type="date" name="maxDate" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group col-lg-10 col-lg-offset-2">
+                        <button type="submit" class="btn btn-xs btn-primary material-icons col-lg-4 pull-right col-lg-pull-0">search</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <form class="form-horizontal" asp-action="GroupingSearch">
+                <fieldset>
+                    <legend>Grouping search</legend>
+                    <div class="form-group">
+                        <label for="minDate" class="col-lg-4">Min date</label>
+                        <div class="col-lg-10">
+                            <input type="date" name="minDate" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="maxDate" class="col-lg-4">Max date</label>
+                        <div class="col-lg-10">
+                            <input type="date" name="maxDate" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group col-lg-10 col-lg-offset-2">
+                        <button type="submit" class="btn btn-xs btn-primary material-icons col-lg-4 pull-right col-lg-pull-0">search</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+@section Scripts{
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
